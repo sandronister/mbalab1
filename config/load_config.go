@@ -3,8 +3,9 @@ package config
 import "github.com/spf13/viper"
 
 type EnviromentVar struct {
-	CepServicePath string `mapstructure:"CEP_SERVICE_PATH"`
-	WebPort        string `mapstructure:"WEB_PORT"`
+	CepServicePath     string `mapstructure:"CEP_SERVICE_PATH"`
+	WeatherServicePath string `mapstructure:"WEATHER_SERVICE_PATH"`
+	WebPort            string `mapstructure:"WEB_PORT"`
 }
 
 func LoadEnviromentVars(path string) (*EnviromentVar, error) {

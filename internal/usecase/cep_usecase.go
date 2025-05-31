@@ -9,20 +9,19 @@ import (
 	"github.com/sandronister/mbalab1/internal/infra/http/types"
 )
 
-type WeatherByCep struct {
+type CepUsacase struct {
 	cepPath string
-
-	http types.IHttpService
+	http    types.IHttpService
 }
 
-func NewWeatherByCep(cepPath string, http types.IHttpService) *WeatherByCep {
-	return &WeatherByCep{
+func NewWeatherByCep(cepPath string, http types.IHttpService) *CepUsacase {
+	return &CepUsacase{
 		cepPath: cepPath,
 		http:    http,
 	}
 }
 
-func (m *WeatherByCep) Get(cep string) (*dto.CepResultDTO, *types.HttpError) {
+func (m *CepUsacase) Get(cep string) (*dto.CepResultDTO, *types.HttpError) {
 	url := fmt.Sprintf(m.cepPath, cep)
 	var cepResult dto.CepResultDTO
 

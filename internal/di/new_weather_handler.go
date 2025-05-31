@@ -6,5 +6,5 @@ import (
 )
 
 func NewWeatherHandler(env *config.EnviromentVar) *handler.WeatherByCep {
-	return handler.NewWeatherByCep(NewWeatherByCep(env))
+	return handler.NewWeatherByCep(NewCepUseCase(env), NewWeatherUseCase(env))
 }

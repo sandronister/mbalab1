@@ -1,0 +1,2 @@
+GET http://localhost:5001/weather/27949-316
+Host: localhost:5001
