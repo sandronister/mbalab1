@@ -6,5 +6,6 @@ import (
 )
 
 func NewWeatherHandler(env *config.EnviromentVar) *handler.WeatherByCep {
-	return handler.NewWeatherByCep(NewCepUseCase(env), NewWeatherUseCase(env))
+	httpService := newHttpService()
+	return handler.NewWeatherByCep(NewCepUseCase(env, httpService), NewWeatherUseCase(env, httpService))
 }
