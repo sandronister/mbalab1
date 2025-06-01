@@ -3,12 +3,15 @@ WORKDIR /app
 COPY . .
 
 RUN go mod download
-RUN go build -o main .
+WORKDIR /app/cmd
+RUN go build -o /app/app .
 
 
 FROM scratch
 WORKDIR /app
-COPY --from=builder /app/main /app/
+COPY --from=builder /app/app /app/
 COPY --from=builder /app/.env /app/
+
+EXPOSE 8080
 
 CMD ["./main"]
