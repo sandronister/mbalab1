@@ -1,2 +1,2 @@
-GET http://localhost:5001/weather/27949-316
-Host: localhost:5001
+GET http://localhost:8080/weather/18050-605
+Host: localhost:8080

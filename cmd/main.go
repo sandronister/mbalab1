@@ -1,8 +1,6 @@
 package main
 
 import (
-	"os"
-
 	"github.com/sandronister/mbalab1/config"
 	"github.com/sandronister/mbalab1/internal/di"
 	"github.com/sandronister/mbalab1/internal/infra/web"
@@ -15,12 +13,7 @@ func main() {
 		panic(err)
 	}
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = env.WebPort
-	}
-
-	server := web.NewServer(port)
+	server := web.NewServer(env.WebPort)
 
 	handler := di.NewWeatherHandler(env)
 
