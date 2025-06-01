@@ -1,2 +1,2 @@
 GET https://lab-1-91072667969.us-central1.run.app/weather/18050-605
-Host: https://lab-1-91072667969.us-central1.run.app
+Accept: application/json
