@@ -2,15 +2,15 @@ package handler
 
 import (
 	"github.com/labstack/echo"
-	"github.com/sandronister/mbalab1/internal/usecase"
+	"github.com/sandronister/mbalab1/internal/usecase/types"
 )
 
 type WeatherByCep struct {
-	cepUsecase     *usecase.CepUsacase
-	weatherUsecase *usecase.WeatherUseCase
+	cepUsecase     types.ICep
+	weatherUsecase types.IWeatherUseCase
 }
 
-func NewWeatherByCep(cepUsecase *usecase.CepUsacase, weatherUseCase *usecase.WeatherUseCase) *WeatherByCep {
+func NewWeatherByCep(cepUsecase types.ICep, weatherUseCase types.IWeatherUseCase) *WeatherByCep {
 	return &WeatherByCep{
 		cepUsecase:     cepUsecase,
 		weatherUsecase: weatherUseCase,
